@@ -1,0 +1,94 @@
+public class test extends JFrame{
+	test(){
+		setTitle("GridLayout 연습");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container contentPane = getContentPane(); 
+		contentPane.setLayout(new GridLayout(1, 10)); 
+
+		for(int i=0; i<10; i++) {
+			String text = Integer.toString(i); 
+			JButton button = new JButton(text);                 //gridlayout
+			contentPane.add(button); 
+		}
+		setSize(500, 100);
+		setVisible(true);
+	}
+		public static void main(String[] args) {
+			new test();
+		}
+}
+
+class MyActionListener implements ActionListener {                     //actionlistener
+	public void actionPerformed(ActionEvent e) {
+		JButton b = (JButton)e.getSource(); 
+		if(b.getText().equals("Action")) {
+			b.setText("액션"); 
+		b.setSize(100, 50);
+		}
+		else {
+			b.setText("Action");
+			b.setSize(50, 100);
+		}
+	}
+}
+
+public class Practice5 extends JFrame{                      //frame practice
+	public String msg = "";
+	public JButton btn;
+	public JTextArea ja = new JTextArea(35, 50);
+	public JTextField jf = new JTextField(43);
+	public JPanel p = new JPanel();
+	Practice5(){
+		p.setLayout(new FlowLayout());
+		
+		p.add(ja);
+		p.add(jf);
+		setSize(580, 715);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		add(p);
+	}
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		new Practice5();
+	}
+}
+
+
+public class GUITest extends JFrame {
+	GUITest(){
+		setTitle("KeyListener");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		Panel p =new Panel();
+		setFocusable(true);
+		setContentPane(p);
+		setSize(500, 300);
+		setVisible(true);
+		p.requestFocus();	
+	}
+	class Panel extends JPanel {
+		  JLabel l = new JLabel("<Enter>키로 배경색이 바뀝니다");
+		  public Panel(){
+		   add(l);
+		   this.addKeyListener(new KeyAdapter() {
+				public void keyPressed(KeyEvent e)  {
+				if(e.getKeyChar()=='q')
+					System.exit(0);
+				else if(e.getKeyCode()==KeyEvent.VK_ENTER)
+					{
+					int r=(int)(Math.random()*256);
+					int g=(int)(Math.random()*256);
+					int b=(int)(Math.random()*256);
+					l.setText("r="+r+",g="+g+",b="+b);
+					Color rr=new Color(r,g,b);
+					setBackground(rr);		
+					}
+			}	
+		});
+	}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 new GUITest();		
+	}
+}
