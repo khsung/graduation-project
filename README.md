@@ -2,4 +2,6 @@
 write layout
 upload at Issues
 
-write title page
+create title page
+
+create main & sub page
