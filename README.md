@@ -7,3 +7,5 @@ create title page
 create main & sub page
 
 study to database(mysql)
+
+add parameter about login EditText
