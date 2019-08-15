@@ -9,3 +9,5 @@ create main & sub page
 study to database(mysql)
 
 add parameter about login EditText
+
+write Register and Login php file
