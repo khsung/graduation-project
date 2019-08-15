@@ -1,0 +1,54 @@
+//Register.php
+
+<?php 
+    $con = mysqli_connect("localhost", "khsung0", "password", "khsung0");
+    mysqli_query($con,'SET NAMES utf8');
+    
+    $userID = $_POST["userID"];
+    $userPassword = $_POST["userPassword"];
+    $userName = $_POST["userName"];
+    $userNum = $_POST["userNum"];
+    $userEmail = $_POST["userEmail"];
+
+    $statement = mysqli_prepare($con, "INSERT INTO USER VALUES (?,?,?,?,?)");
+    mysqli_stmt_bind_param($statement, "sssis", $userID, $userPassword, $userName, $userNum, $userEmail);
+    mysqli_stmt_execute($statement);
+    $response = array();
+    $response["success"] = true;
+ 
+   
+    echo json_encode($response);
+?>
+
+
+
+//Login.php
+
+<?php
+    $con = mysqli_connect("localhost", "khsung0", "password", "khsung0");
+    mysqli_query($con,'SET NAMES utf8');
+
+    $userID = $_POST["userID"];
+    $userPassword = $_POST["userPassword"];
+    
+    $statement = mysqli_prepare($con, "SELECT * FROM USER WHERE userID = ? AND userPassword = ?");
+    mysqli_stmt_bind_param($statement, "ss", $userID, $userPassword);
+    mysqli_stmt_execute($statement);
+
+
+    mysqli_stmt_store_result($statement);
+    mysqli_stmt_bind_result($statement, $userID, $userPassword, $userName, $userNum, $userEmail);
+
+    $response = array();
+    $response["success"] = false;
+ 
+    while(mysqli_stmt_fetch($statement)) {
+        $response["success"] = true;
+        $response["userID"] = $userID;
+        $response["userPassword"] = $userPassword;
+        $response["userName"] = $userName;
+        $response["userNum"] = $userNum;
+        $response["userEmail"] = $userEmail;
+    }
+    echo json_encode($response);
+?>
