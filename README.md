@@ -16,4 +16,4 @@ page name change & write request source
 
 write StartActivity
 
-write RegisterActivity
+write RegisterActivity & modify PHP files
