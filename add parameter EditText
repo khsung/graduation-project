@@ -1,45 +1,41 @@
-//login_page
+//LoginActivity
 
 public class LoginPage extends AppCompatActivity {
-    EditText et_id, et_pw;
-    String s_id,s_pw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
-        et_id = (EditText) findViewById(R.id.editText);
-        et_pw = (EditText) findViewById(R.id.editText2);
+        setContentView(R.layout.activity_login);
+        EditText idText = (EditText) findViewById(R.id.editText);
+        EditText pwText = (EditText) findViewById(R.id.editText2);
     }
     public void ConfirmBtn(View v){
-        s_id = et_id.getText().toString();
-        s_pw = et_pw.getText().toString();
+        String userID = idText.getText().toString();
+        String userPassword = pwText.getText().toString();
         finish();
-        Intent intent = new Intent(getApplicationContext(), MainPage.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 }
 
 
-//Membership_page
+//RegisterActivity
 
 public class MembershipPage extends AppCompatActivity {
-    EditText et_id, et_pw, et_name, et_resitnum, et_email;
-    String s_id,s_pw, s_resitnum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_membership_page);
-        et_id = (EditText) findViewById(R.id.editText5);
-        et_pw = (EditText) findViewById(R.id.editText10);
-        et_name = (EditText) findViewById(R.id.editText8);
-        et_resitnum = (EditText) findViewById(R.id.editText11);
-        et_email = (EditText) findViewById(R.id.editText9);
+        setContentView(R.layout.activity_register);
+        EditText idText = findViewById(R.id.editText);
+        EditText pwText = findViewById(R.id.editText2);
+        EditText nameText = findViewById(R.id.editText7);
+        EditText emailText = findViewById(R.id.editText3);
 
     }
     public void ConfirmBtn(View v){
-        s_id = et_id.getText().toString();
-        s_pw = et_pw.getText().toString();
-        s_resitnum = et_resitnum.getText().toString();
+         String userID = idText.getText().toString();
+         String userPassword = passwordText.getText().toString();
+         String userName = nameText.getText().toString();
+         String userEmail = emailText.getText().toString();
         finish();
     }
 }
