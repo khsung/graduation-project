@@ -15,3 +15,5 @@ write Register and Login php file
 page name change & write request source
 
 write StartActivity
+
+complete RegisterActivity
