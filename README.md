@@ -20,3 +20,5 @@ page name change & write request source
 write StartActivity
 
 write RegisterActivity & modify files
+
+complete RegisterActivity
