@@ -22,3 +22,5 @@ write StartActivity
 write RegisterActivity & modify files
 
 complete RegisterActivity
+
+write DuplicatedRequest
