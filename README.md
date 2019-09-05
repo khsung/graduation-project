@@ -24,3 +24,5 @@ write RegisterActivity & modify files
 complete RegisterActivity
 
 write DuplicatedRequest
+
+write LoginActivity
