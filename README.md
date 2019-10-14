@@ -26,3 +26,4 @@ complete RegisterActivity
 write DuplicatedRequest
 
 write LoginActivity
+
