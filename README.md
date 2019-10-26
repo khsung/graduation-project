@@ -28,3 +28,5 @@ write DuplicatedRequest
 write LoginActivity
 
 change button style
+
+write manageactivity
