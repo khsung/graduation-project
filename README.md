@@ -32,3 +32,5 @@ change button style
 write manageactivity
 
 write UserList.php & modify MainActivity                      //error (can't parse sysntax)
+
+error resolution UserList.php & write Delete.php
